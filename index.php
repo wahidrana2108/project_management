@@ -1,8 +1,6 @@
-<!-- navbar starting -->
 <?php
     include("includes/header.php")
 ?>
-<!-- navbar end -->
 
 
 <div class="container">
@@ -34,11 +32,6 @@
 </div>
 
 
-
-
-
-<!-- footer starting -->
 <?php
     include("includes/footer.php")
 ?>
-<!-- footer end -->

@@ -1,18 +1,9 @@
-<!-- navbar starting -->
 <?php
     include("includes/header.php");
-    $conn = mysqli_connect("localhost", "root", "", "project_management");
 
-    // Check the connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    // Fetch projects from the database
     $sql = "SELECT * FROM projects";
     $result = mysqli_query($conn, $sql);
 ?>
-<!-- navbar end -->
 
 <div class="container">
     <div class="row">
@@ -23,7 +14,6 @@
             </div>
 
             <?php
-            // Loop through the fetched projects and display them
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <div class="card mb-3">
@@ -49,8 +39,6 @@
     </div>
 </div>
 
-<!-- footer starting -->
 <?php
     include("includes/footer.php");
 ?>
-<!-- footer end -->
