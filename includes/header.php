@@ -29,7 +29,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
@@ -45,15 +45,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contract_us.php">Contract us</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    My Account
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                <li class="nav-item ps-lg-5">
+                <?php
+                    session_start();
+                    if(!isset($_SESSION['username'])){
+                        echo "<a class='btn btn-success' href='login.php'>Log In</a>";
+                    }
+                    else{
+                        echo "<a class='btn btn-secondary' href='logout.php'>Log Out</a>";
+                    }
+                ?>
                 </li>
             </ul>
             </div>

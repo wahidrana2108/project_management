@@ -1,6 +1,12 @@
 <?php
     include("includes/header.php");
 
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+        exit();
+    }
+
     $projectId = isset($_GET['id']) ? $_GET['id'] : null;
 
     if (!$projectId || !is_numeric($projectId)) {

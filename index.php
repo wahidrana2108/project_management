@@ -24,9 +24,18 @@
 
         <div class="col-md-6">
             <h2>Get Started</h2>
-            <p>Create an account or sign in to start managing your projects.</p>
-            <a class="btn btn-success" href="#">Log In</a>
-            <a class="btn btn-secondary" href="#">Log Out</a>
+            
+            <?php
+                if(!isset($_SESSION['username'])){
+                    echo "<p>Sign in to begin monitor your projects, or contact the administrator for a manager account.</p>";
+                    echo "<a class='btn btn-success' href='login.php'>Log In</a>";
+                }
+                else{
+                    echo "<p>Ensure that you log out before closing the tab for security purposes.</p>";
+                    echo "<a class='btn btn-secondary' href='logout.php'>Log Out</a>";
+                }
+            ?>
+            
         </div>
     </div>
 </div>
