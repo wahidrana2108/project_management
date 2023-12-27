@@ -37,9 +37,6 @@
                     <a class="nav-link" href="project_list.php">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tasks</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="about_us.php">About us</a>
                 </li>
                 <li class="nav-item">

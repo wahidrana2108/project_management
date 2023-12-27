@@ -76,8 +76,7 @@
         <thead>
             <tr>
                 <th>Task Name</th>
-                <th>Assigned To</th>
-                <th>Status</th>
+                <th>Description</th>
                 <th>Due Date</th>
             </tr>
         </thead>
@@ -85,9 +84,8 @@
             <?php foreach ($tasks as $task) : ?>
                 <tr>
                     <td><?php echo $task['task_name']; ?></td>
-                    <td><?php echo $task['assigned_to']; ?></td>
-                    <td><?php echo $task['status']; ?></td>
-                    <td><?php echo $task['due_date']; ?></td>
+                    <td><?php echo $task['description']; ?></td>
+                    <td><?php echo $task['task_deadline']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -95,7 +93,7 @@
 
     <div class="btn-group">
         <a href="#" class="btn btn-primary">Edit Project</a>
-        <a href="#" class="btn btn-success">Add Task</a>
+        <a href="create_task.php" class="btn btn-success">Add Task</a>
     </div>
 </div>
 
