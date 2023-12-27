@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2023 at 12:15 PM
+-- Generation Time: Dec 27, 2023 at 06:22 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -94,8 +94,9 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`project_id`, `name`, `description`, `deadline`, `budget`, `team_id`, `status`, `starting_date`, `visibility`, `percentage_completed`) VALUES
-(4, 'sdfaasdf', 'asdfdas', '2023-11-29', '123.00', 1, 'running', '2023-12-25 07:58:45', 'private', 68),
-(5, 'sdfaasdf', 'fhffhgf', '2023-12-25', '500.00', 1, 'finished', '2023-12-25 08:01:51', 'public', 96);
+(4, 'sdfaasdf', 'asdfdas', '2023-11-29', '123.00', 1, 'running', '2023-12-25 07:58:45', 'private', 52),
+(5, 'sdfaasdf', 'fhffhgf', '2023-12-25', '500.00', 1, 'finished', '2023-12-25 08:01:51', 'public', 96),
+(6, 'nai', 'lojcvhsdjhjdnnmadvjasd', '2024-01-06', '50000.00', 2, 'running', '2023-12-25 14:34:07', '', 0);
 
 -- --------------------------------------------------------
 
@@ -117,14 +118,19 @@ CREATE TABLE `subtasks` (
 
 CREATE TABLE `tasks` (
   `task_id` int(11) NOT NULL,
+  `task_name` text NOT NULL,
   `project_id` int(11) DEFAULT NULL,
   `description` text NOT NULL,
-  `priority` int(11) DEFAULT NULL,
   `assignee_id` int(11) DEFAULT NULL,
-  `due_date` date DEFAULT NULL,
-  `est_completion_time` int(11) DEFAULT NULL,
-  `progress` enum('To Do','In Progress','Completed') DEFAULT 'To Do'
+  `task_deadline` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`task_id`, `task_name`, `project_id`, `description`, `assignee_id`, `task_deadline`) VALUES
+(1, 'asdf', 4, 'asdfasdfa', NULL, '2023-12-29');
 
 -- --------------------------------------------------------
 
@@ -142,7 +148,8 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`team_id`, `team_name`) VALUES
-(1, 'nai');
+(1, 'nai'),
+(2, 'fhgfh');
 
 -- --------------------------------------------------------
 
@@ -247,7 +254,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `subtasks`
@@ -259,13 +266,13 @@ ALTER TABLE `subtasks`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `team_members`
